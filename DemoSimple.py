@@ -11,7 +11,7 @@ import csv
 import pygame.mixer
 import threading
 from pygame.locals import *
-import moduloVoz
+import moduloConversorTexto
 
 ##################################
 #                                #
@@ -38,7 +38,7 @@ SI=False
 NO=False
 
 #creacion objeto conversor texto voz
-CONV=moduloVoz.VOZ()
+CONV=moduloConversorTexto.CONVERSOR()
 
 #graficos
 pygame.init()
@@ -70,11 +70,11 @@ GPIO.add_event_detect(boton_apagar, GPIO.RISING, callback=apagar, bouncetime=100
 
 def respuestaSi():
 	print("Respuesta: SI")
-	CONV.convertir(fichero="/home/pi/Desktop/Si.mp3", repoducir=True)
+	CONV.convertir(ruta="/home/pi/Desktop/", nombre="Si", reproducir=True)
 
 def respuestaNo():
 	print("Respuesta: NO")
-	CONV.convertir(fichero="/home/pi/Desktop/No.mp3", repoducir=True)
+	CONV.convertir(ruta="/home/pi/Desktop/", nombre="No", reproducir=True)
 
 def estaPulsado():
 	global iteraciones
