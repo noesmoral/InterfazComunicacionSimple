@@ -1,0 +1,15 @@
+#! /bin/sh
+# /etc/init.d/detector-init
+ 
+### BEGIN INIT INFO
+# Provides:          detector-init
+# Required-Start:    $all
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     5
+# Default-Stop:      0 1 6
+# Short-Description: Script de ejemplo de arranque automático
+# Description:       Script para arrancar el detector de presencia
+### END INIT INFO
+
+sudo sh /home/pi/Desktop/lanzar.sh
+exit 0
